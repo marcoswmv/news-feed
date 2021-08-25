@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */; };
 		F76F4A1D26D68A9100CABCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */; };
-		F76F4A1F26D68A9100CABCD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1E26D68A9100CABCD2 /* ViewController.swift */; };
+		F76F4A1F26D68A9100CABCD2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1E26D68A9100CABCD2 /* AuthViewController.swift */; };
 		F76F4A2226D68A9100CABCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2026D68A9100CABCD2 /* Main.storyboard */; };
 		F76F4A2426D68A9300CABCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2326D68A9300CABCD2 /* Assets.xcassets */; };
 		F76F4A2726D68A9300CABCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */; };
@@ -19,6 +19,7 @@
 		F76F4A3526D69C7900CABCD2 /* Kingfisher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F76F4A3626D69C7900CABCD2 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; };
 		F76F4A3726D69C7900CABCD2 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F76F4A3A26D69F7600CABCD2 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,7 +42,7 @@
 		F76F4A1726D68A9100CABCD2 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F76F4A1E26D68A9100CABCD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F76F4A1E26D68A9100CABCD2 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F76F4A2126D68A9100CABCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F76F4A2326D68A9300CABCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76F4A2626D68A9300CABCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
+		F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +87,9 @@
 		F76F4A1926D68A9100CABCD2 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */,
-				F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */,
-				F76F4A1E26D68A9100CABCD2 /* ViewController.swift */,
-				F76F4A2026D68A9100CABCD2 /* Main.storyboard */,
-				F76F4A2326D68A9300CABCD2 /* Assets.xcassets */,
-				F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */,
-				F76F4A2826D68A9300CABCD2 /* Info.plist */,
+				F76F4A3C26D69FCB00CABCD2 /* Storyboards */,
+				F76F4A3D26D69FD500CABCD2 /* Supporting Files */,
+				F76F4A3B26D69FBF00CABCD2 /* View Controllers */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -104,6 +102,35 @@
 				F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F76F4A3B26D69FBF00CABCD2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A1E26D68A9100CABCD2 /* AuthViewController.swift */,
+				F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F76F4A3C26D69FCB00CABCD2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */,
+				F76F4A2026D68A9100CABCD2 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F76F4A3D26D69FD500CABCD2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */,
+				F76F4A2326D68A9300CABCD2 /* Assets.xcassets */,
+				F76F4A2826D68A9300CABCD2 /* Info.plist */,
+				F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +204,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F76F4A1F26D68A9100CABCD2 /* ViewController.swift in Sources */,
+				F76F4A1F26D68A9100CABCD2 /* AuthViewController.swift in Sources */,
 				F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */,
 				F76F4A1D26D68A9100CABCD2 /* SceneDelegate.swift in Sources */,
+				F76F4A3A26D69F7600CABCD2 /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -311,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -329,6 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4L92P5BF3;
 				INFOPLIST_FILE = NewsFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4L92P5BF3;
 				INFOPLIST_FILE = NewsFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

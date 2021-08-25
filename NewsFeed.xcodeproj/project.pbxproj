@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,29 @@
 		F76F4A2226D68A9100CABCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2026D68A9100CABCD2 /* Main.storyboard */; };
 		F76F4A2426D68A9300CABCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2326D68A9300CABCD2 /* Assets.xcassets */; };
 		F76F4A2726D68A9300CABCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */; };
+		F76F4A3226D69C7900CABCD2 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */; };
+		F76F4A3326D69C7900CABCD2 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F76F4A3426D69C7900CABCD2 /* Kingfisher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */; };
+		F76F4A3526D69C7900CABCD2 /* Kingfisher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F76F4A3626D69C7900CABCD2 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; };
+		F76F4A3726D69C7900CABCD2 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F76F4A3826D69C7900CABCD2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F76F4A3326D69C7900CABCD2 /* Alamofire.xcframework in Embed Frameworks */,
+				F76F4A3526D69C7900CABCD2 /* Kingfisher.xcframework in Embed Frameworks */,
+				F76F4A3726D69C7900CABCD2 /* VKSdkFramework.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F76F4A1726D68A9100CABCD2 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +46,9 @@
 		F76F4A2326D68A9300CABCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76F4A2626D68A9300CABCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F76F4A2826D68A9300CABCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
+		F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76F4A3226D69C7900CABCD2 /* Alamofire.xcframework in Frameworks */,
+				F76F4A3426D69C7900CABCD2 /* Kingfisher.xcframework in Frameworks */,
+				F76F4A3626D69C7900CABCD2 /* VKSdkFramework.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +70,7 @@
 			children = (
 				F76F4A1926D68A9100CABCD2 /* NewsFeed */,
 				F76F4A1826D68A9100CABCD2 /* Products */,
+				F76F4A2E26D69C7900CABCD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +96,16 @@
 			path = NewsFeed;
 			sourceTree = "<group>";
 		};
+		F76F4A2E26D69C7900CABCD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */,
+				F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */,
+				F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +116,7 @@
 				F76F4A1326D68A9100CABCD2 /* Sources */,
 				F76F4A1426D68A9100CABCD2 /* Frameworks */,
 				F76F4A1526D68A9100CABCD2 /* Resources */,
+				F76F4A3826D69C7900CABCD2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

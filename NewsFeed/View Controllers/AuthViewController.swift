@@ -6,15 +6,21 @@
 //
 
 import UIKit
+import VKSdkFramework
 
 class AuthViewController: UIViewController {
 
-    @IBOutlet weak var authorizationButton: UIButton!
+    private var authorizationButton: UIButton!
+    
+    private var authManager: AuthManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setAuthButtonLayout()
+        
+        view.backgroundColor = .white
+        
+        setAuthButton()
+        setAuthorization()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,18 +32,27 @@ class AuthViewController: UIViewController {
         super.viewWillDisappear(animated)
         makeNavigationBarVisible()
     }
-
-    @IBAction func authorizeWithVkButton(_ sender: Any) {
-        pushNewsFeedVC()
+    
+    func setAuthorization() {
+        authManager = AuthManager(vc: self)
+        authManager?.checkAuthorizationState(at: self)
     }
     
-    private func pushNewsFeedVC() {
-        self.performSegue(withIdentifier: Consts.newsFeedVCstoryboardSegueId, sender: self)
-    }
-    
-    private func setAuthButtonLayout() {
+    private func setAuthButton() {
+        authorizationButton = UIButton()
+        authorizationButton.setTitle(Consts.authButtonTitle, for: .normal)
+        authorizationButton.backgroundColor = UIColor(named: Consts.nfPurple)
         authorizationButton.layer.cornerRadius = 10
         authorizationButton.clipsToBounds = true
+        
+        view.addSubview(authorizationButton)
+        
+        authorizationButton.enableAutoLayout()
+        authorizationButton.setHeightConstraint(height: 50)
+        authorizationButton.setHorizontalConstraints(to: view, leading: 30, trailing: -30)
+        authorizationButton.setVerticalCenterConstraint(to: view)
+        
+        authorizationButton.addTarget(self, action: #selector(handleAuthorizationWithVk(sender:)), for: .touchUpInside)
     }
     
     private func makeNavigationBarInvisible() {
@@ -53,5 +68,46 @@ class AuthViewController: UIViewController {
         navigationController?.view.backgroundColor = .white
     }
     
+    func pushNewsFeedVC() {
+        let newsFeedVC = NewsFeedViewController()
+        navigationController?.pushViewController(newsFeedVC, animated: true)
+    }
+    
+    @objc func handleAuthorizationWithVk(sender: UIButton) {
+        authManager?.authorizeWithVK()
+    }
 }
 
+extension AuthViewController: VKSdkDelegate {
+    func vkSdkTokenHasExpired(_ expiredToken: VKAccessToken!) {
+        authManager?.authorizeWithVK(false)
+    }
+    
+    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+        if let token = result.token {
+            print("[VK - SUCCESS]")
+            let crecentials = Credentials(credentials: token)
+            Account.shared.setCredentials(crecentials)
+            pushNewsFeedVC()
+        } else if let error = result.error {
+            Alert.showBasicAlert(on: self, title: Consts.accessDeniedTitle, message: error.localizedDescription)
+        }
+    }
+    
+    func vkSdkUserAuthorizationFailed() {
+        Alert.showBasicAlert(on: self, title: Consts.accessDeniedTitle)
+    }
+}
+
+extension AuthViewController: VKSdkUIDelegate {
+    func vkSdkShouldPresent(_ controller: UIViewController!) {
+        if let rootVC = UIApplication.topViewController() {
+            rootVC.present(controller, animated: true)
+        }
+    }
+    
+    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
+        let viewController = VKCaptchaViewController.captchaControllerWithError(captchaError)
+        viewController?.present(in: UIApplication.topViewController())
+    }
+}

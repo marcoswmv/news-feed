@@ -58,8 +58,8 @@ class AuthViewController: UIViewController {
     private func makeNavigationBarInvisible() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.view.backgroundColor = .clear
-        
+        navigationController?.view.backgroundColor = .white
+        navigationController?.navigationBar.barStyle = .default
     }
     
     private func makeNavigationBarVisible() {

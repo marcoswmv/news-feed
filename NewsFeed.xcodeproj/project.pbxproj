@@ -22,11 +22,11 @@
 		F76F4A4026D6A08000CABCD2 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A3F26D6A08000CABCD2 /* Consts.swift */; };
 		F76F4A4326D6A9F100CABCD2 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4226D6A9F100CABCD2 /* UIApplication+TopViewController.swift */; };
 		F76F4A4726D6AA6C00CABCD2 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4626D6AA6C00CABCD2 /* AuthManager.swift */; };
-		F76F4A4926D6AE5100CABCD2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4826D6AE5100CABCD2 /* Alert.swift */; };
 		F76F4A4B26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4A26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift */; };
 		F76F4A4D26D6B57000CABCD2 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4C26D6B57000CABCD2 /* AccountManager.swift */; };
 		F76F4A5026D6B8E000CABCD2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4F26D6B8E000CABCD2 /* Credentials.swift */; };
 		F76F4A5226D6BC3E00CABCD2 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A5126D6BC3E00CABCD2 /* UIView+Constraints.swift */; };
+		F7BA1F5A26D6E82900465E97 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1F5926D6E82900465E97 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,11 +60,11 @@
 		F76F4A3F26D6A08000CABCD2 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		F76F4A4226D6A9F100CABCD2 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+TopViewController.swift"; path = "../../../VKAuth/VKAuth/UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		F76F4A4626D6AA6C00CABCD2 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		F76F4A4826D6AE5100CABCD2 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = ../../../EasyDelete/EasyDelete/Utils/Alert.swift; sourceTree = "<group>"; };
 		F76F4A4A26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDefaults+PropertyWrapper.swift"; path = "../../../../Komitet/Heyka-iOS-master/Heyka-iOS/Helpers/Extensions/UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
 		F76F4A4C26D6B57000CABCD2 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		F76F4A4F26D6B8E000CABCD2 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F76F4A5126D6BC3E00CABCD2 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "../../../EasyDelete/EasyDelete/Extensions/UIView+Constraints.swift"; sourceTree = "<group>"; };
+		F7BA1F5926D6E82900465E97 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				F76F4A3F26D6A08000CABCD2 /* Consts.swift */,
-				F76F4A4826D6AE5100CABCD2 /* Alert.swift */,
+				F7BA1F5926D6E82900465E97 /* Alert.swift */,
 				F76F4A4A26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift */,
 			);
 			path = Utils;
@@ -262,10 +262,10 @@
 				F76F4A5226D6BC3E00CABCD2 /* UIView+Constraints.swift in Sources */,
 				F76F4A5026D6B8E000CABCD2 /* Credentials.swift in Sources */,
 				F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */,
+				F7BA1F5A26D6E82900465E97 /* Alert.swift in Sources */,
 				F76F4A4326D6A9F100CABCD2 /* UIApplication+TopViewController.swift in Sources */,
 				F76F4A4D26D6B57000CABCD2 /* AccountManager.swift in Sources */,
 				F76F4A1D26D68A9100CABCD2 /* SceneDelegate.swift in Sources */,
-				F76F4A4926D6AE5100CABCD2 /* Alert.swift in Sources */,
 				F76F4A4B26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift in Sources */,
 				F76F4A3A26D69F7600CABCD2 /* NewsFeedViewController.swift in Sources */,
 			);

@@ -32,10 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
-        
-        if #available(iOS 13.0, *) {
-            window?.overrideUserInterfaceStyle = .light
-        }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

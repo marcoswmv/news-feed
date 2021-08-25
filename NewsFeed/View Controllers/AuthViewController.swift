@@ -18,6 +18,11 @@ class AuthViewController: UIViewController {
     }
 
     @IBAction func authorizeWithVkButton(_ sender: Any) {
+        pushNewsFeedVC()
+    }
+    
+    private func pushNewsFeedVC() {
+        self.performSegue(withIdentifier: Consts.newsFeedViewControllerStoryboardSegueId, sender: self)
     }
     
     private func setAuthButtonLayout() {

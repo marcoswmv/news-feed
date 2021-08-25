@@ -20,6 +20,7 @@
 		F76F4A3626D69C7900CABCD2 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; };
 		F76F4A3726D69C7900CABCD2 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F76F4A3A26D69F7600CABCD2 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */; };
+		F76F4A4026D6A08000CABCD2 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A3F26D6A08000CABCD2 /* Consts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
 		F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
+		F76F4A3F26D6A08000CABCD2 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		F76F4A1926D68A9100CABCD2 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				F76F4A3E26D6A07300CABCD2 /* Utils */,
 				F76F4A3C26D69FCB00CABCD2 /* Storyboards */,
 				F76F4A3D26D69FD500CABCD2 /* Supporting Files */,
 				F76F4A3B26D69FBF00CABCD2 /* View Controllers */,
@@ -131,6 +134,14 @@
 				F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F76F4A3E26D6A07300CABCD2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A3F26D6A08000CABCD2 /* Consts.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F76F4A1F26D68A9100CABCD2 /* AuthViewController.swift in Sources */,
+				F76F4A4026D6A08000CABCD2 /* Consts.swift in Sources */,
 				F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */,
 				F76F4A1D26D68A9100CABCD2 /* SceneDelegate.swift in Sources */,
 				F76F4A3A26D69F7600CABCD2 /* NewsFeedViewController.swift in Sources */,
@@ -356,7 +368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4L92P5BF3;
-				INFOPLIST_FILE = NewsFeed/Info.plist;
+				INFOPLIST_FILE = "/Users/marcosvicente/Documents/Xcode/MyProjects/NewsFeed/NewsFeed/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,7 +388,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4L92P5BF3;
-				INFOPLIST_FILE = NewsFeed/Info.plist;
+				INFOPLIST_FILE = "/Users/marcosvicente/Documents/Xcode/MyProjects/NewsFeed/NewsFeed/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

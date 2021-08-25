@@ -5,9 +5,12 @@
 //  Created by Marcos Vicente on 25.08.2021.
 //
 
-import Foundation
+import UIKit
 
 struct Consts {
     
-    static let newsFeedViewControllerStoryboardSegueId = "pushNewsFeedVC"
+    static let newsFeedVCnavBarTitle = "Лента"
+    static let newsFeedVCstoryboardSegueId = "pushNewsFeedVC"
+    
+    static let nfPurple = "NFpurple"
 }

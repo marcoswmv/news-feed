@@ -3,27 +3,68 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */; };
 		F76F4A1D26D68A9100CABCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */; };
-		F76F4A1F26D68A9100CABCD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1E26D68A9100CABCD2 /* ViewController.swift */; };
-		F76F4A2226D68A9100CABCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2026D68A9100CABCD2 /* Main.storyboard */; };
+		F76F4A1F26D68A9100CABCD2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A1E26D68A9100CABCD2 /* AuthViewController.swift */; };
 		F76F4A2426D68A9300CABCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2326D68A9300CABCD2 /* Assets.xcassets */; };
 		F76F4A2726D68A9300CABCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */; };
+		F76F4A3226D69C7900CABCD2 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */; };
+		F76F4A3326D69C7900CABCD2 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F76F4A3426D69C7900CABCD2 /* Kingfisher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */; };
+		F76F4A3526D69C7900CABCD2 /* Kingfisher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F76F4A3626D69C7900CABCD2 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; };
+		F76F4A3726D69C7900CABCD2 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F76F4A3A26D69F7600CABCD2 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */; };
+		F76F4A4026D6A08000CABCD2 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A3F26D6A08000CABCD2 /* Consts.swift */; };
+		F76F4A4326D6A9F100CABCD2 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4226D6A9F100CABCD2 /* UIApplication+TopViewController.swift */; };
+		F76F4A4726D6AA6C00CABCD2 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4626D6AA6C00CABCD2 /* AuthManager.swift */; };
+		F76F4A4926D6AE5100CABCD2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4826D6AE5100CABCD2 /* Alert.swift */; };
+		F76F4A4B26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4A26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift */; };
+		F76F4A4D26D6B57000CABCD2 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4C26D6B57000CABCD2 /* AccountManager.swift */; };
+		F76F4A5026D6B8E000CABCD2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A4F26D6B8E000CABCD2 /* Credentials.swift */; };
+		F76F4A5226D6BC3E00CABCD2 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F4A5126D6BC3E00CABCD2 /* UIView+Constraints.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F76F4A3826D69C7900CABCD2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F76F4A3326D69C7900CABCD2 /* Alamofire.xcframework in Embed Frameworks */,
+				F76F4A3526D69C7900CABCD2 /* Kingfisher.xcframework in Embed Frameworks */,
+				F76F4A3726D69C7900CABCD2 /* VKSdkFramework.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F76F4A1726D68A9100CABCD2 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F76F4A1E26D68A9100CABCD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F76F4A2126D68A9100CABCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F76F4A1E26D68A9100CABCD2 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F76F4A2326D68A9300CABCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76F4A2626D68A9300CABCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F76F4A2826D68A9300CABCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
+		F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
+		F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
+		F76F4A3F26D6A08000CABCD2 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		F76F4A4226D6A9F100CABCD2 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+TopViewController.swift"; path = "../../../VKAuth/VKAuth/UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
+		F76F4A4626D6AA6C00CABCD2 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		F76F4A4826D6AE5100CABCD2 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = ../../../EasyDelete/EasyDelete/Utils/Alert.swift; sourceTree = "<group>"; };
+		F76F4A4A26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDefaults+PropertyWrapper.swift"; path = "../../../../Komitet/Heyka-iOS-master/Heyka-iOS/Helpers/Extensions/UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
+		F76F4A4C26D6B57000CABCD2 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		F76F4A4F26D6B8E000CABCD2 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		F76F4A5126D6BC3E00CABCD2 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "../../../EasyDelete/EasyDelete/Extensions/UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76F4A3226D69C7900CABCD2 /* Alamofire.xcframework in Frameworks */,
+				F76F4A3426D69C7900CABCD2 /* Kingfisher.xcframework in Frameworks */,
+				F76F4A3626D69C7900CABCD2 /* VKSdkFramework.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +86,7 @@
 			children = (
 				F76F4A1926D68A9100CABCD2 /* NewsFeed */,
 				F76F4A1826D68A9100CABCD2 /* Products */,
+				F76F4A2E26D69C7900CABCD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +101,89 @@
 		F76F4A1926D68A9100CABCD2 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */,
-				F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */,
-				F76F4A1E26D68A9100CABCD2 /* ViewController.swift */,
-				F76F4A2026D68A9100CABCD2 /* Main.storyboard */,
-				F76F4A2326D68A9300CABCD2 /* Assets.xcassets */,
-				F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */,
-				F76F4A2826D68A9300CABCD2 /* Info.plist */,
+				F76F4A4426D6AA4E00CABCD2 /* Data */,
+				F76F4A4126D6A9DC00CABCD2 /* Extensions */,
+				F76F4A3E26D6A07300CABCD2 /* Utils */,
+				F76F4A3D26D69FD500CABCD2 /* Supporting Files */,
+				F76F4A3B26D69FBF00CABCD2 /* View Controllers */,
 			);
 			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		F76F4A2E26D69C7900CABCD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A2F26D69C7900CABCD2 /* Alamofire.xcframework */,
+				F76F4A3026D69C7900CABCD2 /* Kingfisher.xcframework */,
+				F76F4A3126D69C7900CABCD2 /* VKSdkFramework.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F76F4A3B26D69FBF00CABCD2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A1E26D68A9100CABCD2 /* AuthViewController.swift */,
+				F76F4A3926D69F7600CABCD2 /* NewsFeedViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F76F4A3D26D69FD500CABCD2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */,
+				F76F4A1A26D68A9100CABCD2 /* AppDelegate.swift */,
+				F76F4A2326D68A9300CABCD2 /* Assets.xcassets */,
+				F76F4A2826D68A9300CABCD2 /* Info.plist */,
+				F76F4A1C26D68A9100CABCD2 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F76F4A3E26D6A07300CABCD2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A3F26D6A08000CABCD2 /* Consts.swift */,
+				F76F4A4826D6AE5100CABCD2 /* Alert.swift */,
+				F76F4A4A26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F76F4A4126D6A9DC00CABCD2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A4226D6A9F100CABCD2 /* UIApplication+TopViewController.swift */,
+				F76F4A5126D6BC3E00CABCD2 /* UIView+Constraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F76F4A4426D6AA4E00CABCD2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A4E26D6B8D000CABCD2 /* Models */,
+				F76F4A4526D6AA5B00CABCD2 /* Managers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F76F4A4526D6AA5B00CABCD2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A4626D6AA6C00CABCD2 /* AuthManager.swift */,
+				F76F4A4C26D6B57000CABCD2 /* AccountManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F76F4A4E26D6B8D000CABCD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F76F4A4F26D6B8E000CABCD2 /* Credentials.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +196,7 @@
 				F76F4A1326D68A9100CABCD2 /* Sources */,
 				F76F4A1426D68A9100CABCD2 /* Frameworks */,
 				F76F4A1526D68A9100CABCD2 /* Resources */,
+				F76F4A3826D69C7900CABCD2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,7 +246,6 @@
 			files = (
 				F76F4A2726D68A9300CABCD2 /* LaunchScreen.storyboard in Resources */,
 				F76F4A2426D68A9300CABCD2 /* Assets.xcassets in Resources */,
-				F76F4A2226D68A9100CABCD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +256,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F76F4A1F26D68A9100CABCD2 /* ViewController.swift in Sources */,
+				F76F4A1F26D68A9100CABCD2 /* AuthViewController.swift in Sources */,
+				F76F4A4726D6AA6C00CABCD2 /* AuthManager.swift in Sources */,
+				F76F4A4026D6A08000CABCD2 /* Consts.swift in Sources */,
+				F76F4A5226D6BC3E00CABCD2 /* UIView+Constraints.swift in Sources */,
+				F76F4A5026D6B8E000CABCD2 /* Credentials.swift in Sources */,
 				F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */,
+				F76F4A4326D6A9F100CABCD2 /* UIApplication+TopViewController.swift in Sources */,
+				F76F4A4D26D6B57000CABCD2 /* AccountManager.swift in Sources */,
 				F76F4A1D26D68A9100CABCD2 /* SceneDelegate.swift in Sources */,
+				F76F4A4926D6AE5100CABCD2 /* Alert.swift in Sources */,
+				F76F4A4B26D6B55100CABCD2 /* UserDefaults+PropertyWrapper.swift in Sources */,
+				F76F4A3A26D69F7600CABCD2 /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F76F4A2026D68A9100CABCD2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F76F4A2126D68A9100CABCD2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F76F4A2526D68A9300CABCD2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -288,7 +408,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4L92P5BF3;
-				INFOPLIST_FILE = NewsFeed/Info.plist;
+				INFOPLIST_FILE = "/Users/marcosvicente/Documents/Xcode/MyProjects/NewsFeed/NewsFeed/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +417,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mwmv.NewsFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +428,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4L92P5BF3;
-				INFOPLIST_FILE = NewsFeed/Info.plist;
+				INFOPLIST_FILE = "/Users/marcosvicente/Documents/Xcode/MyProjects/NewsFeed/NewsFeed/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mwmv.NewsFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

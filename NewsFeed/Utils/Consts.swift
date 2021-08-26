@@ -15,9 +15,8 @@ struct Consts {
     static let authButtonTitle = "Войти"
     
     static let newsFeedVCnavBarTitle = "Лента"
+    static let newsTableViewCellId = "newsTableViewCellId"
     static let signOutButton = "Выход"
-    
-    static let nfPurple = "NFpurple"
     
     static let errorTitle = "An Error Occurred"
     static let accessDeniedTitle = "Access denied!"

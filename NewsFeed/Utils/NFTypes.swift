@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct NFTypes {
+    
+    typealias NewsList = [News]
+}

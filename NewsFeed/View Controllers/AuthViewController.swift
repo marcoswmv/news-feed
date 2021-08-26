@@ -17,8 +17,6 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
         setAuthButton()
         setAuthorization()
     }
@@ -34,22 +32,22 @@ class AuthViewController: UIViewController {
     }
     
     func setAuthorization() {
-        authManager = AuthManager(vc: self)
+        authManager = AuthManager(viewController: self)
         authManager?.checkAuthorizationState(at: self)
     }
     
     private func setAuthButton() {
         authorizationButton = UIButton()
         authorizationButton.setTitle(Consts.authButtonTitle, for: .normal)
-        authorizationButton.backgroundColor = UIColor(named: Consts.nfPurple)
+        authorizationButton.backgroundColor = .lightishBlue
         authorizationButton.layer.cornerRadius = 10
         authorizationButton.clipsToBounds = true
         
         view.addSubview(authorizationButton)
         
         authorizationButton.enableAutoLayout()
-        authorizationButton.setHeightConstraint(height: 50)
-        authorizationButton.setHorizontalConstraints(to: view, leading: 30, trailing: -30)
+        authorizationButton.setHeightConstraint(height: 52)
+        authorizationButton.setHorizontalConstraints(to: view, leading: 31, trailing: -31)
         authorizationButton.setVerticalCenterConstraint(to: view)
         
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationWithVk(sender:)), for: .touchUpInside)
@@ -90,7 +88,7 @@ extension AuthViewController: VKSdkDelegate {
             Account.shared.setCredentials(crecentials)
             pushNewsFeedVC()
         } else if let error = result.error {
-            Alert.showBasicAlert(on: self, title: Consts.accessDeniedTitle, message: error.localizedDescription)
+            Alert.showBasicAlert(on: self, message: error.localizedDescription)
         }
     }
     

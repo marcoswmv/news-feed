@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsCellHeaderView" customModule="NewsFeed" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageView" destination="1Ae-hW-PaT" id="rJY-01-8vo"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="yvA-Ny-IPi"/>
+                <outlet property="postDateLabel" destination="Pw7-kJ-r5f" id="nSd-FU-crq"/>
+                <outlet property="postTextLabel" destination="VVh-9I-MQ3" id="AAj-go-42m"/>
+                <outlet property="usernameLabel" destination="Jkj-WC-W6t" id="tT8-Th-DrK"/>
+                <outlet property="view" destination="iN0-l3-epB" id="OYI-CQ-wFE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iWz-wZ-UVw">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Yia-8f-vSJ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ae-hW-PaT">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="4Lz-Uq-WFD"/>
+                                        <constraint firstAttribute="height" constant="40" id="bka-Rp-e79"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Elr-ky-NdR">
+                                    <rect key="frame" x="52" y="0.0" width="362" height="40"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Покемоний паблик" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-WC-W6t">
+                                            <rect key="frame" x="0.0" y="0.0" width="362" height="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 апр в 20:39" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw7-kJ-r5f">
+                                            <rect key="frame" x="0.0" y="21" width="362" height="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="245" text="Мы пошуршали тридэредактором и сделали алфавит их покемонов" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVh-9I-MQ3">
+                            <rect key="frame" x="0.0" y="55" width="414" height="91"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="iWz-wZ-UVw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6dR-oe-jxM"/>
+                <constraint firstAttribute="bottom" secondItem="iWz-wZ-UVw" secondAttribute="bottom" id="EHy-OJ-AWU"/>
+                <constraint firstAttribute="trailing" secondItem="iWz-wZ-UVw" secondAttribute="trailing" id="OMo-WJ-1OV"/>
+                <constraint firstItem="iWz-wZ-UVw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eDo-7i-RV1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-391.304347826087" y="40.513392857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

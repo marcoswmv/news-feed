@@ -4,8 +4,8 @@ opt_in_rules:
 - empty_count
 - empty_string
 excluded:
-- EasyDelete/Data/Managers/DataBaseManager.swift
-- EasyDelete/Data/DataSource/BaseDataSource.swift
+- NewsFeed/Data/Data Source/NewsDataSource.swift
+- NewsFeed/Data/Models
 - Carthage
 - Pods
 - SwiftLint/Common/3rdPartyLib

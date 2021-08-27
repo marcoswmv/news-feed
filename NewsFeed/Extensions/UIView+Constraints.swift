@@ -116,4 +116,15 @@ extension UIView {
         }
         NSLayoutConstraint.activate([constraint])
     }
+    
+    func setBottomConstraint(to superview: UIView, top: CGFloat? = nil) {
+        var constraint = NSLayoutConstraint()
+        
+        if let top = top {
+            constraint = bottomAnchor.constraint(equalTo: superview.topAnchor, constant: top)
+        } else {
+            constraint = bottomAnchor.constraint(equalTo: superview.topAnchor)
+        }
+        NSLayoutConstraint.activate([constraint])
+    }
 }

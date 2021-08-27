@@ -53,7 +53,7 @@ class UIViewWithXib: UIView {
         // 3. allow for autolayout
         self.view.translatesAutoresizingMaskIntoConstraints = false
         // 4. add constraints to span entire view
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: ["view": view!]))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: ["view": view!]))
+        self.setHorizontalConstraints(to: view)
+        self.setVerticalConstraints(to: view)
     }
 }

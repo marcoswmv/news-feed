@@ -18,8 +18,6 @@ class NewsFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
         configureNewsTableView()
         configureNavigationBar()
     }
@@ -40,10 +38,13 @@ class NewsFeedViewController: UIViewController {
         newsTableView = UITableView()
         newsTableView.layoutMargins = UIEdgeInsets.zero
         newsTableView.separatorInset = UIEdgeInsets.zero
+        newsTableView.tableFooterView = UIView()
+        
         view.addSubview(newsTableView)
         newsTableView.enableAutoLayout()
         newsTableView.register(UITableViewCell.self, forCellReuseIdentifier: Consts.newsTableViewCellId)
         newsTableView.setConstraints(to: view)
+        
         setupDataSource()
     }
     

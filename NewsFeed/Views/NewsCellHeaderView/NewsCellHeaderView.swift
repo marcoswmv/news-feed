@@ -31,11 +31,11 @@ class NewsCellHeaderView: UIViewWithXib {
         willSet { postTextLabel.attributedText = textAttriburedString(text: newValue) }
     }
     
-    func update(photo: UIImage?, username: String, postDate: String, postText: String) {
-        self.avatar = photo
-        self.username = username
-        self.postDate = postDate
-        self.postText = postText
+    func update(model: NewsTableViewCell.NewsHeaderModel) {
+        self.avatar = model.avatar
+        self.username = model.username
+        self.postDate = model.postDate
+        self.postText = model.postText
     }
     
     public func usernameAttriburedString(text: String?) -> NSAttributedString? {

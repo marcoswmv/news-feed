@@ -51,11 +51,11 @@ class NewsCellFooterView: UIViewWithXib {
         viewsCountLabel.letterSpacing = -0.08
     }
     
-    func update(likesCount: Int?, commentsCount: Int?, repostsCount: Int?, viewsCount: Int?) {
-        self.likesCount = likesCount
-        self.commentsCount = commentsCount
-        self.repostsCount = repostsCount
-        self.viewsCount = viewsCount
+    func update(model: NewsTableViewCell.NewsFooterModel) {
+        self.likesCount = model.likesCount
+        self.commentsCount = model.commentsCount
+        self.repostsCount = model.repostsCount
+        self.viewsCount = model.viewsCount
     }
     
     public func valueAttriburedString(value: Int?) -> NSAttributedString? {

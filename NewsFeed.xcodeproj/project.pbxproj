@@ -47,6 +47,7 @@
 		F7BA1F9426D8093B00465E97 /* NewsCellFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1F9326D8093B00465E97 /* NewsCellFooterView.swift */; };
 		F7BA1F9626D8094900465E97 /* NewsCellFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7BA1F9526D8094900465E97 /* NewsCellFooterView.xib */; };
 		F7BA1F9826D828D000465E97 /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1F9726D828CF00465E97 /* UserDefaults+PropertyWrapper.swift */; };
+		F7BA1FBF26D856A600465E97 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FBE26D856A600465E97 /* PhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +106,7 @@
 		F7BA1F9326D8093B00465E97 /* NewsCellFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellFooterView.swift; sourceTree = "<group>"; };
 		F7BA1F9526D8094900465E97 /* NewsCellFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCellFooterView.xib; sourceTree = "<group>"; };
 		F7BA1F9726D828CF00465E97 /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
+		F7BA1FBE26D856A600465E97 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,9 +245,11 @@
 		F7BA1F5D26D7B17E00465E97 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F7BA1FC026D8805600465E97 /* PhotosCollectionView */,
 				F7BA1F9226D8091700465E97 /* NewsCellFooterView */,
 				F7BA1F8126D7EC0700465E97 /* NewsCellHeaderView */,
 				F7BA1F6C26D7BAB800465E97 /* NewsTableViewCell.swift */,
+				F7BA1FBE26D856A600465E97 /* PhotosCollectionViewCell.swift */,
 				F7BA1F7F26D7EB8200465E97 /* UIViewWithXib.swift */,
 			);
 			path = Views;
@@ -276,6 +280,13 @@
 				F7BA1F9526D8094900465E97 /* NewsCellFooterView.xib */,
 			);
 			path = NewsCellFooterView;
+			sourceTree = "<group>";
+		};
+		F7BA1FC026D8805600465E97 /* PhotosCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhotosCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +395,7 @@
 				F7BA1F6426D7B4F800465E97 /* BaseDataSource.swift in Sources */,
 				F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */,
 				F7BA1F9126D7FF9900465E97 /* User.swift in Sources */,
+				F7BA1FBF26D856A600465E97 /* PhotosCollectionViewCell.swift in Sources */,
 				F7BA1F5A26D6E82900465E97 /* Alert.swift in Sources */,
 				F7BA1F8926D7FB1D00465E97 /* Avatar.swift in Sources */,
 				F7BA1F6E26D7BAB800465E97 /* NewsTableViewCell.swift in Sources */,

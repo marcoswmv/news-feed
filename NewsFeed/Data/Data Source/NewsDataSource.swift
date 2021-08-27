@@ -36,18 +36,31 @@ class NewsDataSource: BaseDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? NewsTableViewCell ?? NewsTableViewCell(style: .default, reuseIdentifier: cellId)
         
         let news = data[indexPath.row]
-        let stats = NewsTableViewCell.NewsConfiguration.Stats(likesCount: news.likes.count, commentsCount: news.comments.count, repostsCount: news.reposts.count, viewsCount: news.views.count)
-        let config = NewsTableViewCell.NewsConfiguration(avatar: nil, username: news.fromId, postDate: news.date, postText: news.text, stats: stats)
+        let headerModel = NewsTableViewCell.NewsHeaderModel(avatar: nil, username: news.fromId, postDate: news.date, postText: news.text)
+        let bodyModel = NewsTableViewCell.NewsBodyModel(attachments: news.attachments)
+        let footerModel = NewsTableViewCell.NewsFooterModel(likesCount: news.likes.count, commentsCount: news.comments.count, repostsCount: news.reposts.count, viewsCount: news.views.count)
         
-        cell.update(content: .news(config))
+        cell.update(content: .news(headerModel, bodyModel, footerModel))
+        cell.dummyCollection = [
+            UIImage(named: "photo1")!,
+            UIImage(named: "photo2")!,
+            UIImage(named: "photo3")!,
+            UIImage(named: "photo4")!,
+            UIImage(named: "photo5")!
+        ]
+        
         cell.layoutMargins = UIEdgeInsets.zero
+        cell.photosCollectionView.reloadData()
+        cell.layoutIfNeeded()
         
-//        cell.setNeedsUpdateConstraints()
-//        cell.updateConstraintsIfNeeded()
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

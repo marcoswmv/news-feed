@@ -16,6 +16,7 @@ struct Consts {
     
     static let newsFeedVCnavBarTitle = "Лента"
     static let newsTableViewCellId = "newsTableViewCellId"
+    static let photosCollectionViewCellId = "photosCollectionViewCellId"
     static let signOutButton = "Выход"
     
     static let errorTitle = "An Error Occurred"

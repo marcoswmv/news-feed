@@ -9,9 +9,9 @@ import UIKit
 
 extension NewsTableViewCell {
     struct NewsHeaderModel {
-        var avatar: UIImage?
+        var avatar: URL?
         var username: String
-        var postDate: String
+        var postDate: Int
         var postText: String
     }
     

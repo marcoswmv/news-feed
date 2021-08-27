@@ -48,6 +48,9 @@
 		F7BA1F9626D8094900465E97 /* NewsCellFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7BA1F9526D8094900465E97 /* NewsCellFooterView.xib */; };
 		F7BA1F9826D828D000465E97 /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1F9726D828CF00465E97 /* UserDefaults+PropertyWrapper.swift */; };
 		F7BA1FBF26D856A600465E97 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FBE26D856A600465E97 /* PhotosCollectionViewCell.swift */; };
+		F7BA1FC226D88C9500465E97 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FC126D88C9500465E97 /* NetworkService.swift */; };
+		F7BA1FC426D8956800465E97 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FC326D8956800465E97 /* Endpoints.swift */; };
+		F7BA1FC926D91D9D00465E97 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FC826D91D9D00465E97 /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,6 +110,9 @@
 		F7BA1F9526D8094900465E97 /* NewsCellFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCellFooterView.xib; sourceTree = "<group>"; };
 		F7BA1F9726D828CF00465E97 /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
 		F7BA1FBE26D856A600465E97 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7BA1FC126D88C9500465E97 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F7BA1FC326D8956800465E97 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		F7BA1FC826D91D9D00465E97 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,7 @@
 		F76F4A4426D6AA4E00CABCD2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F7BA1FC726D90DED00465E97 /* Services */,
 				F7BA1F6026D7B49800465E97 /* Data Source */,
 				F76F4A4E26D6B8D000CABCD2 /* Models */,
 				F76F4A4526D6AA5B00CABCD2 /* Managers */,
@@ -232,9 +239,11 @@
 			isa = PBXGroup;
 			children = (
 				F76F4A4F26D6B8E000CABCD2 /* Credentials.swift */,
+				F7BA1FC326D8956800465E97 /* Endpoints.swift */,
 				F7BA1F6826D7B82100465E97 /* News.swift */,
 				F7BA1F8826D7FB1D00465E97 /* Avatar.swift */,
 				F7BA1F8E26D7FF8B00465E97 /* NewsResponseModel.swift */,
+				F7BA1FC826D91D9D00465E97 /* Group.swift */,
 				F7BA1F9026D7FF9900465E97 /* User.swift */,
 				F7BA1F8C26D7FDD000465E97 /* Video.swift */,
 				F7BA1F8A26D7FDBF00465E97 /* Attachment.swift */,
@@ -248,8 +257,8 @@
 				F7BA1FC026D8805600465E97 /* PhotosCollectionView */,
 				F7BA1F9226D8091700465E97 /* NewsCellFooterView */,
 				F7BA1F8126D7EC0700465E97 /* NewsCellHeaderView */,
-				F7BA1F6C26D7BAB800465E97 /* NewsTableViewCell.swift */,
 				F7BA1FBE26D856A600465E97 /* PhotosCollectionViewCell.swift */,
+				F7BA1F6C26D7BAB800465E97 /* NewsTableViewCell.swift */,
 				F7BA1F7F26D7EB8200465E97 /* UIViewWithXib.swift */,
 			);
 			path = Views;
@@ -287,6 +296,14 @@
 			children = (
 			);
 			path = PhotosCollectionView;
+			sourceTree = "<group>";
+		};
+		F7BA1FC726D90DED00465E97 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F7BA1FC126D88C9500465E97 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +403,7 @@
 			files = (
 				F7BA1F9426D8093B00465E97 /* NewsCellFooterView.swift in Sources */,
 				F76F4A1F26D68A9100CABCD2 /* AuthViewController.swift in Sources */,
+				F7BA1FC926D91D9D00465E97 /* Group.swift in Sources */,
 				F76F4A4726D6AA6C00CABCD2 /* AuthManager.swift in Sources */,
 				F7BA1F7E26D7DE9700465E97 /* UILabel+LineHeight.swift in Sources */,
 				F76F4A4026D6A08000CABCD2 /* Consts.swift in Sources */,
@@ -402,6 +420,7 @@
 				F7BA1F8B26D7FDBF00465E97 /* Attachment.swift in Sources */,
 				F7BA1F8F26D7FF8B00465E97 /* NewsResponseModel.swift in Sources */,
 				F76F4A4D26D6B57000CABCD2 /* AccountManager.swift in Sources */,
+				F7BA1FC226D88C9500465E97 /* NetworkService.swift in Sources */,
 				F7BA1F7C26D7DD5000465E97 /* UIView+Constraints.swift in Sources */,
 				F7BA1F8326D7EC2A00465E97 /* NewsCellHeaderView.swift in Sources */,
 				F7BA1F7826D7DD0D00465E97 /* UILabel+LetterSpacing.swift in Sources */,
@@ -413,6 +432,7 @@
 				F7BA1F7626D7D86500465E97 /* UIImage+AppIcons.swift in Sources */,
 				F7BA1F7A26D7DD2F00465E97 /* UIApplication+TopViewController.swift in Sources */,
 				F7BA1F6226D7B4C800465E97 /* NewsDataSource.swift in Sources */,
+				F7BA1FC426D8956800465E97 /* Endpoints.swift in Sources */,
 				F7BA1F6B26D7B8CE00465E97 /* NFTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsCellHeaderView: UIViewWithXib {
 
@@ -15,20 +16,30 @@ class NewsCellHeaderView: UIViewWithXib {
     @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var postTextLabel: UILabel!
     
-    var avatar: UIImage? {
-        willSet { avatarImageView.image = newValue }
+    var avatar: URL? {
+        willSet { avatarImageView.kf.setImage(with: newValue, options: [.backgroundDecode, .transition(.fade(0.2))]) }
     }
     
     var username: String? {
         willSet { usernameLabel.attributedText = usernameAttriburedString(text: newValue) }
     }
     
-    var postDate: String? {
-        willSet { postDateLabel.attributedText = postDateAttriburedString(text: newValue) }
+    var postDate: Int? {
+        willSet { postDateLabel.attributedText = postDateAttriburedString(value: newValue) }
     }
     
     var postText: String? {
         willSet { postTextLabel.attributedText = textAttriburedString(text: newValue) }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func update(model: NewsTableViewCell.NewsHeaderModel) {
@@ -60,14 +71,30 @@ class NewsCellHeaderView: UIViewWithXib {
         return attributedString
     }
     
-    public func postDateAttriburedString(text: String?) -> NSAttributedString? {
-        guard let text = text else { return nil }
+    public func postDateAttriburedString(value: Int?) -> NSAttributedString? {
+        guard let value = value else { return nil }
         
+        let text = convertDateToString(value: value)
         let attributedString = NSAttributedString(string: text, attributes: [
             .foregroundColor: UIColor.blueGray,
             .font: UIFont.systemFont(ofSize: 13.0, weight: .regular)
         ])
         
         return attributedString
+    }
+    
+    private func convertDateToString(value: Int) -> String {
+        
+        let timeInterval = TimeInterval(value)
+        let myDate = Date(timeIntervalSince1970: timeInterval)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd LLL в HH:mm"
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        
+        var date = dateFormatter.string(from: myDate)
+        date.removeAll { $0 == "." }
+        
+        return date
     }
 }

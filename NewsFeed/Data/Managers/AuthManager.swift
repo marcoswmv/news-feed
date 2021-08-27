@@ -11,7 +11,7 @@ import VKSdkFramework
 class AuthManager {
     
     private var vkInstance: VKSdk
-    private let scope = [VK_PER_EMAIL]
+    private let scope = [VK_PER_EMAIL, VK_PER_WALL, VK_PER_FRIENDS]
     
     init(viewController: UIViewController) {
         vkInstance = VKSdk.initialize(withAppId: Consts.vkAppId)

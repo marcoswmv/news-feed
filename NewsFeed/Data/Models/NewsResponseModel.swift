@@ -7,7 +7,12 @@
 
 import Foundation
 
+struct ResponseModelContainer: Codable {
+    var response: ResponseModel
+}
+
 struct ResponseModel: Codable {
-    var items: [News]
-    var profiles: [User]
+    var items: NFTypes.NewsList
+    var profiles: NFTypes.UsersList
+    var groups: NFTypes.GroupsList
 }

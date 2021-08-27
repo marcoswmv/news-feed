@@ -10,4 +10,6 @@ import Foundation
 struct NFTypes {
     
     typealias NewsList = [News]
+    typealias UsersList = [User]
+    typealias GroupsList = [Group]
 }

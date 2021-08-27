@@ -11,7 +11,7 @@ class BaseDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     private(set) var tableView: UITableView
     var onError: ((_ error: Error) -> Void)?
-    var onLoading: ((_ error: Error) -> Void)?
+    var onLoading: ((_ isLoading: Bool) -> Void)?
     
     init(tableView: UITableView) {
         self.tableView = tableView

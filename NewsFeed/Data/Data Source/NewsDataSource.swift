@@ -5,38 +5,72 @@
 //  Created by Marcos Vicente on 26.08.2021.
 //
 
-import Foundation
 import UIKit
+import Alamofire
 
 class NewsDataSource: BaseDataSource {
     
-    // network manager
-    private(set) var data: NFTypes.NewsList = NFTypes.NewsList()
+    private(set) var newsData: NFTypes.NewsList = NFTypes.NewsList()
+    private(set) var usersData: NFTypes.UsersList = NFTypes.UsersList()
+    private(set) var groupsData: NFTypes.GroupsList = NFTypes.GroupsList()
     
     override func setup() {
         super.setup()
     }
     
     override func reload() {
+        onLoading?(true)
         
-        data = [News(id: 0, fromId: "Marcos Vicente", date: "123445", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper mollis purus. Vivamus tempor auctor nunc, non consectetur ipsum condimentum tempus", comments: Comment(count: 10), likes: Like(count: 134), reposts: Repost(count: 203), attachments: nil, views: Views(count: 500), type: "photo"),
-                News(id: 0, fromId: "Marcos Vicente", date: "123445", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper mollis purus. Vivamus tempor auctor nunc, non consectetur ipsum condimentum tempus", comments: Comment(count: 10), likes: Like(count: 134), reposts: Repost(count: 203), attachments: nil, views: Views(count: 500), type: "photo"),
-                News(id: 0, fromId: "Marcos Vicente", date: "123445", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper mollis purus. Vivamus tempor auctor nunc, non consectetur ipsum condimentum tempus. Vivamus tempor auctor nunc, non consectetur ipsum condimentum tempus", comments: Comment(count: 10), likes: Like(count: 134), reposts: Repost(count: 203), attachments: nil, views: Views(count: 500), type: "photo"),
-                News(id: 0, fromId: "Marcos Vicente", date: "123445", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper mollis purus. Vivamus tempor auctor nunc, non consectetur ipsum condimentum tempus", comments: Comment(count: 10), likes: Like(count: 134), reposts: Repost(count: 203), attachments: nil, views: Views(count: 500), type: "photo")]
-        
-        tableView.reloadData()
+        NetworkService.shared.getPosts(endpoint: .newsfeed) { [weak self] (result: Result<ResponseModelContainer, AFError>) in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let result):
+                self.onLoading?(false)
+                
+                self.newsData = result.response.items
+                self.usersData = result.response.profiles
+                self.groupsData = result.response.groups
+                
+                self.tableView.reloadData()
+            case .failure(let error):
+                self.onError?(error)
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        newsData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = Consts.newsTableViewCellId
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? NewsTableViewCell ?? NewsTableViewCell(style: .default, reuseIdentifier: cellId)
         
-        let news = data[indexPath.row]
-        let headerModel = NewsTableViewCell.NewsHeaderModel(avatar: nil, username: news.fromId, postDate: news.date, postText: news.text)
+        let news = newsData[indexPath.row]
+        var newsPostAuthorName = ""
+        var avatarURL = URL(string: "")
+        
+        if let authorId = news.sourceId {
+            if authorId < 0 {
+                let groupId = authorId * -1
+                if let newsPostAuthor = groupsData.first(where: { $0.id == groupId }) {
+                    newsPostAuthorName = newsPostAuthor.name
+                    if let url = newsPostAuthor.photo50 {
+                        avatarURL = URL(string: url)
+                    }
+                }
+            } else {
+                if let newsPostAuthor = usersData.first(where: { $0.id == authorId }) {
+                    newsPostAuthorName = newsPostAuthor.firstName + newsPostAuthor.lastName
+                    if let url = newsPostAuthor.photo50 {
+                        avatarURL = URL(string: url)
+                    }
+                }
+            }
+        }
+        
+        let headerModel = NewsTableViewCell.NewsHeaderModel(avatar: avatarURL, username: newsPostAuthorName, postDate: news.date, postText: news.text)
         let bodyModel = NewsTableViewCell.NewsBodyModel(attachments: news.attachments)
         let footerModel = NewsTableViewCell.NewsFooterModel(likesCount: news.likes.count, commentsCount: news.comments.count, repostsCount: news.reposts.count, viewsCount: news.views.count)
         

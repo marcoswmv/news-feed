@@ -7,18 +7,18 @@
 
 import UIKit
 
-struct News: Codable { // items
+struct News: Codable {
     
-    var id: Int
-    var fromId: String // Author's ID
-    var date: String
+    var postId: Int
+    var sourceId: Int? // Author's ID
+    var date: Int
     var text: String
     var comments: Comment
     var likes: Like
     var reposts: Repost
     var attachments: [Attachment]?
     var views: Views
-    var type: String // indicate = post
+    var type: String
 }
 
 struct Like: Codable {

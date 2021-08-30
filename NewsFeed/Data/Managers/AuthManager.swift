@@ -11,16 +11,16 @@ import VKSdkFramework
 class AuthManager {
     
     private var vkInstance: VKSdk
-    private let scope = [VK_PER_EMAIL]
+    private let scope = [VK_PER_EMAIL, VK_PER_WALL, VK_PER_FRIENDS]
     
-    init(vc: UIViewController) {
+    init(viewController: UIViewController) {
         vkInstance = VKSdk.initialize(withAppId: Consts.vkAppId)
-        setDelegates(for: vc)
+        setDelegates(for: viewController)
     }
     
-    func setDelegates(for vc: UIViewController) {
-        vkInstance.register(vc as? VKSdkDelegate)
-        vkInstance.uiDelegate = vc as? VKSdkUIDelegate
+    func setDelegates(for viewController: UIViewController) {
+        vkInstance.register(viewController as? VKSdkDelegate)
+        vkInstance.uiDelegate = viewController as? VKSdkUIDelegate
     }
     
     func authorizeWithVK(_ enabled: Bool = true) {
@@ -31,15 +31,15 @@ class AuthManager {
         }
     }
     
-    func checkAuthorizationState(at vc: UIViewController?) {
+    func checkAuthorizationState(at viewController: UIViewController?) {
         VKSdk.wakeUpSession(scope) { state, error in
             if state == .authorized {
-                if let authVC = vc as? AuthViewController {
-                    authVC.pushNewsFeedVC()
+                if let authViewController = viewController as? AuthViewController {
+                    authViewController.pushNewsFeedVC()
                 }
             } else if let error = error {
-                if let authVC = vc {
-                    Alert.showErrorAlert(on: authVC, message: error.localizedDescription)
+                if let authviewController = viewController {
+                    Alert.showErrorAlert(on: authviewController, message: error.localizedDescription)
                 }
             }
         }

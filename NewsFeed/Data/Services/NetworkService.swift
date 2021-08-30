@@ -33,7 +33,7 @@ class NetworkService {
         AF.request(url, method: method, parameters: parameters, encoding: encoding).responseJSON { [weak self] response in
             guard let self = self else { return }
             
-            DispatchQueue.global().async { [weak self] in
+            DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 
                 if let error = response.error {
@@ -48,6 +48,7 @@ class NetworkService {
                         let object = try self.decoder.decode(T.self, from: data)
                         completionHandler(.success(object))
                     } catch let error {
+                        print(error)
                         completionHandler(.failure(.responseSerializationFailed(reason: .decodingFailed(error: error))))
                     }
                 }

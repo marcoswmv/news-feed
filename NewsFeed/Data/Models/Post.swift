@@ -9,16 +9,17 @@ import Foundation
 
 struct Post: Codable {
     
-    var postId: Int
-    var sourceId: Int // Author's ID
+    var postId: Int?
+    var sourceId: Int? // Author's ID
     var date: Int
     var text: String
-    var comments: Comment
-    var likes: Like
-    var reposts: Repost
-    var attachments: [Attachment]?
+    var comments: Comment?
+    var likes: Like?
+    var reposts: Repost?
+    var attachments: NFTypes.Attachments?
     var views: Views?
-    var type: String
+    var type: String?
+    var copyHistory: NFTypes.PostsList?
     
     static var mocked = Post(postId: 0, sourceId: 0, date: 0, text: "", comments: Comment(count: 0), likes: Like(count: 0), reposts: Repost(count: 0), views: Views(count: 0), type: "")
 }

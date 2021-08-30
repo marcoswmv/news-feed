@@ -65,7 +65,7 @@ class NewsCellBodyView: UIView {
         
         mediaCollectionView.enableAutoLayout()
         mediaCollectionView.setHorizontalConstraints(to: self)
-        mediaCollectionView.setTopConstraint(to: textLabel, bottom: 15, .defaultLow)
+        mediaCollectionView.setTopConstraint(to: textLabel, bottom: 15, .defaultHigh)
         mediaCollectionView.setBottomConstraint(to: self, bottom: 0)
         mediaCollectionView.setHeightConstraint(greaterThenOrEqualTo: 0, .defaultHigh)
     }
@@ -103,7 +103,10 @@ extension NewsCellBodyView: UICollectionViewDataSource, UICollectionViewDelegate
                         cell.update(content: .photo(urlString))
                     }
                 } else if atts.type == Consts.video {
-                    // TO-DO: send video url
+//                    print("VIDEO ATTACHM: \(atts.video)")
+                    if let video = atts.video {
+                        cell.update(content: .video(video))
+                    }
                 }
 //            }
         }

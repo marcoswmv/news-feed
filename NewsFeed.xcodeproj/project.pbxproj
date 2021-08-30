@@ -51,9 +51,9 @@
 		F7BA1FC426D8956800465E97 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FC326D8956800465E97 /* Endpoints.swift */; };
 		F7BA1FC926D91D9D00465E97 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FC826D91D9D00465E97 /* Group.swift */; };
 		F7BA1FCE26D9303D00465E97 /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FCD26D9303D00465E97 /* DynamicHeightCollectionView.swift */; };
-		F7BA1FD026D9336D00465E97 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FCF26D9336D00465E97 /* ImageService.swift */; };
 		F7BA1FD226DAFBEF00465E97 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FD126DAFBEF00465E97 /* Post.swift */; };
 		F7BA1FD926DB6FD000465E97 /* NewsCellBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FD826DB6FD000465E97 /* NewsCellBodyView.swift */; };
+		F7BA1FE126DD134D00465E97 /* VideoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1FE026DD134D00465E97 /* VideoThumbnail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,9 +116,9 @@
 		F7BA1FC326D8956800465E97 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		F7BA1FC826D91D9D00465E97 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		F7BA1FCD26D9303D00465E97 /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
-		F7BA1FCF26D9336D00465E97 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		F7BA1FD126DAFBEF00465E97 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F7BA1FD826DB6FD000465E97 /* NewsCellBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellBodyView.swift; sourceTree = "<group>"; };
+		F7BA1FE026DD134D00465E97 /* VideoThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,10 +263,9 @@
 				F7BA1FD726DB6FAF00465E97 /* NewsCellBodyView */,
 				F7BA1F9226D8091700465E97 /* NewsCellFooterView */,
 				F7BA1F8126D7EC0700465E97 /* NewsCellHeaderView */,
-				F7BA1FBE26D856A600465E97 /* MediaCollectionViewCell.swift */,
-				F7BA1F6C26D7BAB800465E97 /* NewsTableViewCell.swift */,
-				F7BA1F7F26D7EB8200465E97 /* UIViewWithXib.swift */,
-				F7BA1FCD26D9303D00465E97 /* DynamicHeightCollectionView.swift */,
+				F7BA1FDE26DD08BE00465E97 /* Cells */,
+				F7BA1FDF26DD08D800465E97 /* Base Views */,
+				F7BA1FE026DD134D00465E97 /* VideoThumbnail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,7 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				F7BA1FC126D88C9500465E97 /* NetworkService.swift */,
-				F7BA1FCF26D9336D00465E97 /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -313,6 +311,24 @@
 				F7BA1FD826DB6FD000465E97 /* NewsCellBodyView.swift */,
 			);
 			path = NewsCellBodyView;
+			sourceTree = "<group>";
+		};
+		F7BA1FDE26DD08BE00465E97 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F7BA1FBE26D856A600465E97 /* MediaCollectionViewCell.swift */,
+				F7BA1F6C26D7BAB800465E97 /* NewsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F7BA1FDF26DD08D800465E97 /* Base Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7BA1F7F26D7EB8200465E97 /* UIViewWithXib.swift */,
+				F7BA1FCD26D9303D00465E97 /* DynamicHeightCollectionView.swift */,
+			);
+			path = "Base Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,10 +436,10 @@
 				F7BA1F9826D828D000465E97 /* UserDefaults+PropertyWrapper.swift in Sources */,
 				F7BA1F8D26D7FDD000465E97 /* Video.swift in Sources */,
 				F7BA1F6426D7B4F800465E97 /* BaseTableViewDataSource.swift in Sources */,
+				F7BA1FE126DD134D00465E97 /* VideoThumbnail.swift in Sources */,
 				F76F4A1B26D68A9100CABCD2 /* AppDelegate.swift in Sources */,
 				F7BA1F9126D7FF9900465E97 /* User.swift in Sources */,
 				F7BA1FBF26D856A600465E97 /* MediaCollectionViewCell.swift in Sources */,
-				F7BA1FD026D9336D00465E97 /* ImageService.swift in Sources */,
 				F7BA1F5A26D6E82900465E97 /* Alert.swift in Sources */,
 				F7BA1FD226DAFBEF00465E97 /* Post.swift in Sources */,
 				F7BA1F8926D7FB1D00465E97 /* Photo.swift in Sources */,

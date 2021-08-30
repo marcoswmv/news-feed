@@ -20,4 +20,8 @@ extension UIColor {
     class var lightishBlue: UIColor {
         return UIColor(red: 60.0 / 255.0, green: 92.0 / 255.0, blue: 1.0, alpha: 1.0)
     }
+    
+    class var translucentlack: UIColor {
+        return UIColor(white: 0.0, alpha: 0.55)
+    }
 }

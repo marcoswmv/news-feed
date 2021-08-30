@@ -15,6 +15,8 @@ struct NFTypes {
     typealias GroupsList = [Group]
     typealias PhotosList = [String: Photo]
     typealias VideosList = [String: Video]
-    
+    typealias VideoImages = [VideoImage]
+    typealias PhotoSizes = [PhotoSize]
+    typealias Attachments = [Attachment]
     typealias ImageResponse = (Result<RetrieveImageResult, KingfisherError>) -> Void
 }

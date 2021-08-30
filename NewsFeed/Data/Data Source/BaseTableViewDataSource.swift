@@ -54,7 +54,4 @@ class BaseTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
     }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    }
 }

@@ -10,7 +10,7 @@ import Foundation
 struct Photo: Codable {
     
     var id: Int
-    var sizes: [PhotoSize]
+    var sizes: NFTypes.PhotoSizes
 }
 
 struct PhotoSize: Codable {

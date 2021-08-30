@@ -68,23 +68,25 @@ class NewsDataSource: BaseTableViewDataSource {
         var newsPostAuthorName = ""
         var avatarURL = URL(string: "")
         
-        let authorId = post.sourceId
-        if authorId < 0 {
-            let groupId = authorId * -1
-            if let newsPostAuthor = groupsData.first(where: { $0.id == groupId }) {
-                newsPostAuthorName = newsPostAuthor.name
-                avatarURL = getAuthorAvatarUrlString(newsPostAuthor.photo50)
+        if let authorId = post.sourceId {
+            if authorId < 0 {
+                let groupId = authorId * -1
+                if let newsPostAuthor = groupsData.first(where: { $0.id == groupId }) {
+                    newsPostAuthorName = newsPostAuthor.name
+                    avatarURL = getAuthorAvatarUrlString(newsPostAuthor.photo50)
+                }
+            } else {
+                if let newsPostAuthor = usersData.first(where: { $0.id == authorId }) {
+                    newsPostAuthorName = newsPostAuthor.firstName + newsPostAuthor.lastName
+                    avatarURL = getAuthorAvatarUrlString(newsPostAuthor.photo50)
+                }
             }
-        } else {
-            if let newsPostAuthor = usersData.first(where: { $0.id == authorId }) {
-                newsPostAuthorName = newsPostAuthor.firstName + newsPostAuthor.lastName
-                avatarURL = getAuthorAvatarUrlString(newsPostAuthor.photo50)
-            }
+            
         }
         
         let headerModel = NewsTableViewCell.NewsHeaderModel(avatar: avatarURL, username: newsPostAuthorName, postDate: post.date)
         let bodyModel = NewsTableViewCell.NewsBodyModel(postText: post.text, attachments: post.attachments)
-        let footerModel = NewsTableViewCell.NewsFooterModel(likesCount: post.likes.count, commentsCount: post.comments.count, repostsCount: post.reposts.count, viewsCount: post.views?.count)
+        let footerModel = NewsTableViewCell.NewsFooterModel(likesCount: post.likes?.count, commentsCount: post.comments?.count, repostsCount: post.reposts?.count, viewsCount: post.views?.count)
         
         return .feedPost(headerModel, bodyModel, footerModel)
     }
@@ -122,7 +124,9 @@ class NewsDataSource: BaseTableViewDataSource {
         
         cell.update(content: post)
         cell.layoutIfNeeded()
+        
         cell.cellBody.mediaCollectionView.reloadData()
+        cell.cellBody.updateConstraints()
         
         return cell
     }

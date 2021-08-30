@@ -16,17 +16,25 @@ class NetworkService {
     
     private let baseURL: URL = URL(string: "https://api.vk.com/method")!
     
+    var isPaginating: Bool = false
+    
     private init() { }
     
-    @discardableResult
-    private func genericRequest<T: Codable>(url: URL, method: HTTPMethod = .get, parameters: Parameters?, completionHandler: @escaping (Result<T, AFError>) -> Void) -> DataRequest {
+    private func genericRequest<T: Codable>(pagination: Bool = false, url: URL, method: HTTPMethod = .get, parameters: Parameters?, completionHandler: @escaping (Result<T, AFError>) -> Void) {
+        
+        guard !isPaginating else { return }
+        
+        if pagination {
+            isPaginating = true
+        }
         
         let encoding = JSONEncoding.default
         
-        return AF.request(url, method: method, parameters: parameters, encoding: encoding).responseJSON { [weak self] response in
+        AF.request(url, method: method, parameters: parameters, encoding: encoding).responseJSON { [weak self] response in
             guard let self = self else { return }
             
-            DispatchQueue.main.async {
+            DispatchQueue.global().async { [weak self] in
+                guard let self = self else { return }
                 
                 if let error = response.error {
                     completionHandler(.failure(error))
@@ -34,6 +42,7 @@ class NetworkService {
                 }
                 
                 if let data = response.data {
+                    print("SUCCESS: \(data)")
                     do {
                         self.decoder.keyDecodingStrategy = .convertFromSnakeCase
                         let object = try self.decoder.decode(T.self, from: data)
@@ -42,6 +51,10 @@ class NetworkService {
                         completionHandler(.failure(.responseSerializationFailed(reason: .decodingFailed(error: error))))
                     }
                 }
+                
+                if pagination {
+                    self.isPaginating = false
+                }
             }
         }
     }
@@ -49,14 +62,13 @@ class NetworkService {
 
 extension NetworkService {
     
-    @discardableResult
-    func getPosts<T: Codable>(endpoint: EndPoint, completionHandler: @escaping (Result<T, AFError>) -> Void) -> DataRequest {
+    func getPosts<T: Codable>(from nextPage: String, with pagination: Bool = false, at endpoint: EndPoint, completionHandler: @escaping (Result<T, AFError>) -> Void) {
         
         let accessToken = Account.shared.credentials?.accessToken ?? ""
-        let params = "filters=post&v=5.131&access_token=\(accessToken)"
+        let params = "filters=post&v=5.131&count=20&start_from=\(nextPage)&access_token=\(accessToken)"
         let urlString = baseURL.absoluteString + "/" + endpoint.stringValue + "?" + params
         let url = URL(string: urlString)!
         
-        return genericRequest(url: url, parameters: nil, completionHandler: completionHandler)
+        genericRequest(pagination: pagination, url: url, parameters: nil, completionHandler: completionHandler)
     }
 }

@@ -10,11 +10,11 @@ import Kingfisher
 
 class NewsCellHeaderView: UIViewWithXib {
 
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postDateLabel: UILabel!
-    @IBOutlet weak var postTextLabel: UILabel!
+    
+    @IBOutlet weak var containerStackView: UIStackView!
     
     var avatar: URL? {
         willSet { avatarImageView.kf.setImage(with: newValue, options: [.backgroundDecode, .transition(.fade(0.2))]) }
@@ -28,25 +28,30 @@ class NewsCellHeaderView: UIViewWithXib {
         willSet { postDateLabel.attributedText = postDateAttriburedString(value: newValue) }
     }
     
-    var postText: String? {
-        willSet { postTextLabel.attributedText = textAttriburedString(text: newValue) }
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2
+        configureContainerStackView()
+        configureImageView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func configureImageView() {
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2
+    }
+    
+    private func configureContainerStackView() {
+        containerStackView.enableAutoLayout()
+        containerStackView.setConstraints(to: view)
+    }
+    
     func update(model: NewsTableViewCell.NewsHeaderModel) {
         self.avatar = model.avatar
         self.username = model.username
         self.postDate = model.postDate
-        self.postText = model.postText
     }
     
     public func usernameAttriburedString(text: String?) -> NSAttributedString? {
@@ -55,17 +60,6 @@ class NewsCellHeaderView: UIViewWithXib {
         let attributedString = NSAttributedString(string: text, attributes: [
             .foregroundColor: UIColor.black,
             .font: UIFont.systemFont(ofSize: 14.0, weight: .semibold)
-        ])
-        
-        return attributedString
-    }
-    
-    public func textAttriburedString(text: String?) -> NSAttributedString? {
-        guard let text = text else { return nil }
-        
-        let attributedString = NSAttributedString(string: text, attributes: [
-            .foregroundColor: UIColor.black,
-            .font: UIFont.systemFont(ofSize: 14.0, weight: .regular)
         ])
         
         return attributedString

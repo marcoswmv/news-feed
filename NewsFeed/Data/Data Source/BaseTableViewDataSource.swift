@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class BaseTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     private(set) var tableView: UITableView
     var onError: ((_ error: Error) -> Void)?
@@ -30,7 +30,7 @@ class BaseDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +45,16 @@ class BaseDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 0
+        0
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     }
 }

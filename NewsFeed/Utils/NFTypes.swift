@@ -6,10 +6,15 @@
 //
 
 import Foundation
+import Kingfisher
 
 struct NFTypes {
     
-    typealias NewsList = [News]
+    typealias PostsList = [Post]
     typealias UsersList = [User]
     typealias GroupsList = [Group]
+    typealias PhotosList = [String: Photo]
+    typealias VideosList = [String: Video]
+    
+    typealias ImageResponse = (Result<RetrieveImageResult, KingfisherError>) -> Void
 }

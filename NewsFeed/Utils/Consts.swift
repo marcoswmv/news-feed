@@ -16,8 +16,11 @@ struct Consts {
     
     static let newsFeedVCnavBarTitle = "Лента"
     static let newsTableViewCellId = "newsTableViewCellId"
-    static let photosCollectionViewCellId = "photosCollectionViewCellId"
+    static let mediaCollectionViewCellId = "mediaCollectionViewCellId"
     static let signOutButton = "Выход"
+    static let photo = "photo"
+    static let video = "video"
+    static let newsFeedViewController = "newsFeedViewController"
     
     static let errorTitle = "An Error Occurred"
     static let accessDeniedTitle = "Access denied!"

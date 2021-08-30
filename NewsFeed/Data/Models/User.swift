@@ -12,5 +12,5 @@ struct User: Codable {
     var id: Int
     var firstName: String
     var lastName: String
-    var photo50: String?
+    var photo50: String
 }

@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct Avatar: Codable {
+struct Photo: Codable {
     
     var id: Int
-    var sizes: [AvatarSizes]
+    var sizes: [PhotoSize]
 }
 
-struct AvatarSizes: Codable {
+struct PhotoSize: Codable {
     
-    var src: String?
+    var url: String?
     var width: Int
     var height: Int
     var type: String

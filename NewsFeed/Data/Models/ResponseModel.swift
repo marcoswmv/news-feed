@@ -12,7 +12,8 @@ struct ResponseModelContainer: Codable {
 }
 
 struct ResponseModel: Codable {
-    var items: NFTypes.NewsList
+    var items: NFTypes.PostsList
     var profiles: NFTypes.UsersList
     var groups: NFTypes.GroupsList
+    var nextFrom: String
 }

@@ -22,6 +22,12 @@ class NewsFeedViewController: UIViewController {
         configureNavigationBar()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        dataSource?.reload()
+    }
+    
     private func configureNavigationBar() {
         navigationItem.title = Consts.newsFeedVCnavBarTitle
         navigationItem.hidesBackButton = true
@@ -38,7 +44,6 @@ class NewsFeedViewController: UIViewController {
         newsTableView = UITableView()
         newsTableView.layoutMargins = UIEdgeInsets.zero
         newsTableView.separatorInset = UIEdgeInsets.zero
-        newsTableView.tableFooterView = UIView()
         
         view.addSubview(newsTableView)
         newsTableView.enableAutoLayout()
@@ -50,7 +55,9 @@ class NewsFeedViewController: UIViewController {
     
     private func setupDataSource() {
         dataSource = NewsDataSource(tableView: newsTableView)
-        dataSource?.reload()
+        dataSource?.onError = { error in
+            Alert.showErrorAlert(on: self, message: error.localizedDescription)
+        }
     }
     
     @objc func handleSignOutButton(sender: UIButton) {

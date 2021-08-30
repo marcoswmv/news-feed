@@ -10,12 +10,12 @@ import UIKit
 extension UIView {
     
     func enableAutoLayout() {
-        translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setConstraints(to superview: UIView, leading: CGFloat? = nil, top: CGFloat? = nil, trailing: CGFloat? = nil, bottom: CGFloat? = nil) {
-        setHorizontalConstraints(to: superview, leading: leading, trailing: trailing)
-        setVerticalConstraints(to: superview, top: top, bottom: bottom)
+    func setConstraints(to superview: UIView, leading: CGFloat? = nil, top: CGFloat? = nil, trailing: CGFloat? = nil, bottom: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
+        setHorizontalConstraints(to: superview, leading: leading, trailing: trailing, priority)
+        setVerticalConstraints(to: superview, top: top, bottom: bottom, priority)
     }
     
     func setCenterConstraint(to superview: UIView) {
@@ -35,12 +35,12 @@ extension UIView {
         ])
     }
     
-    func setHorizontalConstraints(to superview: UIView, leading: CGFloat? = nil, trailing: CGFloat? = nil) {
-        setLeadingConstraint(to: superview, leading: leading)
-        setTrailingConstraint(to: superview, trailing: trailing)
+    func setHorizontalConstraints(to superview: UIView, leading: CGFloat? = nil, trailing: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
+        setLeadingConstraint(to: superview, leading: leading, priority)
+        setTrailingConstraint(to: superview, trailing: trailing, priority)
     }
     
-    func setLeadingConstraint(to superview: UIView, leading: CGFloat? = nil) {
+    func setLeadingConstraint(to superview: UIView, leading: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
         var constraint = NSLayoutConstraint()
         
         if let leading = leading {
@@ -48,10 +48,13 @@ extension UIView {
         } else {
             constraint = leadingAnchor.constraint(equalTo: superview.leadingAnchor)
         }
+        
+        constraint.priority = priority
+        
         NSLayoutConstraint.activate([constraint])
     }
     
-    func setTrailingConstraint(to superview: UIView, trailing: CGFloat? = nil) {
+    func setTrailingConstraint(to superview: UIView, trailing: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
         var constraint = NSLayoutConstraint()
         
         if let trailing = trailing {
@@ -59,15 +62,18 @@ extension UIView {
         } else {
             constraint = trailingAnchor.constraint(equalTo: superview.trailingAnchor)
         }
+        
+        constraint.priority = priority
+        
         NSLayoutConstraint.activate([constraint])
     }
     
-    func setVerticalConstraints(to superview: UIView, top: CGFloat? = nil, bottom: CGFloat? = nil) {
-        setTopConstraint(to: superview, top: top)
-        setBottomConstraint(to: superview, bottom: bottom)
+    func setVerticalConstraints(to superview: UIView, top: CGFloat? = nil, bottom: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
+        setTopConstraint(to: superview, top: top, priority)
+        setBottomConstraint(to: superview, bottom: bottom, priority)
     }
     
-    func setTopConstraint(to superview: UIView, top: CGFloat? = nil) {
+    func setTopConstraint(to superview: UIView, top: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
         var constraint = NSLayoutConstraint()
         
         if let top = top {
@@ -75,10 +81,13 @@ extension UIView {
         } else {
             constraint = topAnchor.constraint(equalTo: superview.topAnchor)
         }
+        
+        constraint.priority = priority
+        
         NSLayoutConstraint.activate([constraint])
     }
     
-    func setBottomConstraint(to superview: UIView, bottom: CGFloat? = nil) {
+    func setBottomConstraint(to superview: UIView, bottom: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
         var constraint = NSLayoutConstraint()
         
         if let bottom = bottom {
@@ -86,6 +95,9 @@ extension UIView {
         } else {
             constraint = bottomAnchor.constraint(equalTo: superview.bottomAnchor)
         }
+        
+        constraint.priority = priority
+        
         NSLayoutConstraint.activate([constraint])
     }
     
@@ -106,7 +118,14 @@ extension UIView {
         ])
     }
     
-    func setTopConstraint(to superview: UIView, bottom: CGFloat? = nil) {
+    func setHeightConstraint(greaterThenOrEqualTo height: CGFloat, _ priority: UILayoutPriority = .required) {
+        let constraint = heightAnchor.constraint(greaterThanOrEqualToConstant: height)
+        constraint.priority = priority
+        
+        NSLayoutConstraint.activate([constraint])
+    }
+    
+    func setTopConstraint(to superview: UIView, bottom: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
         var constraint = NSLayoutConstraint()
         
         if let bottom = bottom {
@@ -114,10 +133,13 @@ extension UIView {
         } else {
             constraint = topAnchor.constraint(equalTo: superview.bottomAnchor)
         }
+        
+        constraint.priority = priority
+        
         NSLayoutConstraint.activate([constraint])
     }
     
-    func setBottomConstraint(to superview: UIView, top: CGFloat? = nil) {
+    func setBottomConstraint(to superview: UIView, top: CGFloat? = nil, _ priority: UILayoutPriority = .required) {
         var constraint = NSLayoutConstraint()
         
         if let top = top {
@@ -125,6 +147,9 @@ extension UIView {
         } else {
             constraint = bottomAnchor.constraint(equalTo: superview.topAnchor)
         }
+        
+        constraint.priority = priority
+        
         NSLayoutConstraint.activate([constraint])
     }
 }
